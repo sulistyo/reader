@@ -1,0 +1,127 @@
+<%= header1({url:'javascript:history.back(1)'}) %>
+
+<div class="iscroll">
+    <div class="scroller">
+        <%= title({title:"Rules"}) %>
+        <div class="ui-body" >
+            <div class="ui-content">
+                <h2 class="normal"><%= model.attributes.rule.rule_number["@current_display"] %></h2>
+                <b>Effective:</b> <%= model.attributes.rule.rule_header["effDate"] %><br />
+                <b><%= model.attributes.rule.rule_tagline %></b><br />
+                    <hr noshade align="center" width="90%" />
+                <br />
+
+                    <ol style="list-style-type:upper-alpha;" class="rules">
+                    <% for(var i in model.attributes.rule.rule_text.level1) { %>
+
+                        <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].para_first["#text"] %></p>
+           
+                          <% if  (model.attributes.rule.rule_text.level1[i].para !== undefined) { %>
+                              <p class="rules"><%= model.attributes.rule.rule_text.level1[i].para["#text"] %></p>
+                          <% } %>
+
+                        </li>
+
+                            <ol style="list-style-type:decimal;" class="rules">
+                            <% for(var j in model.attributes.rule.rule_text.level1[i].level2) { %>
+
+                                <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].para_first["#text"] %></p>
+
+                                    <% if  (model.attributes.rule.rule_text.level1[i].level2[j].para !== undefined) { %>
+                                        <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].para["#text"] %></p>
+                                    <% } %>
+
+                                </li>
+
+                                <ol style="list-style-type:lower-alpha;" class="rules">
+                                <% for(var k in model.attributes.rule.rule_text.level1[i].level2[j].level3) { %>
+
+                                    <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].para_first["#text"] %></p>
+
+                                        <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].para !== undefined) { %>
+                                            <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].para["#text"] %></p>
+                                        <% } %>
+
+                                    </li>
+                                        
+                                        <ol style="list-style-type:lower-roman;" class="rules">
+                                        <% for(var l in model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4) { %>
+
+                                            <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].para_first["#text"] %></p>
+
+                                                <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].para !== undefined) { %>
+                                                    <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].para["#text"] %></p>
+                                                <% } %>
+
+                                            </li>
+
+                                                <ol style="list-style-type:lower-alpha;" class="rules_ital">
+                                                <% for(var m in model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5) { %>
+
+                                                    <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].para_first["#text"] %></p>
+
+                                                        <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].para !== undefined) { %>
+                                                            <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].para["#text"] %></p>
+                                                        <% } %>
+
+                                                    </li>
+
+                                                        <ol style="list-style-type:lower-roman;" class="rules_ital">
+                                                        <% for(var n in model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6) { %>
+
+                                                            <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].para_first["#text"] %></p>
+
+                                                                <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].para !== undefined) { %>
+                                                                    <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].para["#text"] %></p>
+                                                                <% } %>
+
+                                                            </li>
+
+                                                                <ol style="list-style-type:upper-alpha;" class="rules_ital">
+                                                                <% for(var o in model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7) { %>
+
+                                                                    <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].para_first["#text"] %></p>
+
+                                                                        <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].para !== undefined) { %>
+                                                                            <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].para["#text"] %></p>
+                                                                        <% } %>
+
+                                                                    </li>
+
+                                                                        <ol style="list-style-type:decimal;" class="rules_ital">
+                                                                        <% for(var p in model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].level8) { %>
+
+                                                                            <li><p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].level8[p].para_first["#text"] %></p>
+
+                                                                                <% if  (model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].level8[p].para !== undefined) { %>
+                                                                                    <p class="rules"><%= model.attributes.rule.rule_text.level1[i].level2[j].level3[k].level4[l].level5[m].level6[n].level7[o].level8[p].para["#text"] %></p>
+                                                                                <% } %>
+
+                                                                            </li>
+
+                                                                        <% } %>
+                                                                        </ol>
+
+                                                                <% } %>
+                                                                </ol>
+
+                                                        <% } %>
+                                                        </ol>
+
+                                                <% } %>
+                                                </ol>
+
+                                        <% } %>
+                                        </ol>
+
+                                <% } %>
+                                </ol>
+
+                            <% } %>
+                            </ol>
+                    <% } %>
+                    </ol>
+            </div>
+        </div>
+    </div>
+<!-- <%= footer() %> -->

@@ -1,0 +1,87 @@
+#!/bin/bash
+
+ORIG_DIR=$1
+DEST_DIR=$2
+ENVIRONMENT=$3
+TIMESTAMP="v."`date +"%m%d.%H%M%S"`
+
+
+cat $ORIG_DIR"app/config/config.js" | grep "js" | cut -f2 -d"'" | while read b; do
+    tname=`echo $b | cut -f3 -d"/" | cut -f1 -d"."`
+    echo >> $DEST_DIR"index-temp.js"
+    cat $ORIG_DIR$b >> $DEST_DIR"index-temp.js"
+    echo >> $DEST_DIR"index-temp.js"
+    echo >> $DEST_DIR"index-temp.js"
+done
+
+
+
+rm -fr $DEST_DIR"index.html"
+
+cat $ORIG_DIR"index.html" |
+    while read a; do
+        if [[ "$a" =~ "<!-- \$TPLS -->" ]]; then
+            cat $ORIG_DIR"app/config/config.js" | grep "html" | cut -f2 -d"'" | while read b; do
+                tname=`echo $b | cut -f3 -d"/" | cut -f1 -d"."`
+                echo >> $DEST_DIR"index.html"
+                echo "<script type=\"text/template\" id=\"template-$tname\">" >> $DEST_DIR"index.html"
+                echo >> $DEST_DIR"index.html"
+                cat $ORIG_DIR$b >> $DEST_DIR"index.html"
+                echo >> $DEST_DIR"index.html"
+                echo >> $DEST_DIR"index.html"
+                echo "</script>" >> $DEST_DIR"index.html"
+                echo >> $DEST_DIR"index.html"
+            done
+        elif [[ "$a" =~ "data-remove-me" ]]; then
+            continue
+        elif [[ "$a" =~ "data-compile-me" ]]; then
+            ttype=`echo $a | cut -f2 -d'"'`
+            tpath=`echo $a | cut -f4 -d'"'`
+
+            if [[ "$ttype" = "text/javascript" ]]; then
+                if [[ "$tpath" = "index.js" ]]; then
+                    echo "$a" >> $DEST_DIR"index.html"
+                else
+		                cat $DEST_DIR$tpath >> $DEST_DIR"index-compiled.js"
+                    rm -fr $DEST_DIR$tpath
+                fi
+            else
+                cat $DEST_DIR$tpath >> $DEST_DIR"index-compiled.css"
+                if [[ "$tpath" =~ "global.css" ]]; then
+                    echo "$a" >> $DEST_DIR"index.html"
+                else
+                    rm -fr $DEST_DIR$tpath
+                fi
+            fi
+        elif [[ "$a" =~ "data-replace-me" ]]; then
+            ttype=`echo $a | cut -f2 -d'"'`
+            tpath=`echo $a | cut -f4 -d'"'`
+            if [[ "$ttype" = "text/javascript" ]]; then
+                echo "<script type=\"text/javascript\" data-src=\"$tpath\">" >> $DEST_DIR"index.html"
+                cat $DEST_DIR$tpath >> $DEST_DIR"index.html"
+                echo "</script>" >> $DEST_DIR"index.html"
+            else
+                echo "<style type=\"text/css\" data-src=\"$tpath\">" >> $DEST_DIR"index.html"
+                cat $DEST_DIR$tpath >> $DEST_DIR"index.html"
+                echo "</style>" >> $DEST_DIR"index.html"
+            fi
+            rm -fr $DEST_DIR$tpath
+        else
+            echo "$a" >> $DEST_DIR"index.html"
+        fi
+    done
+
+if [ -f $DEST_DIR"index-compiled.js" ]; then
+
+		cp $DEST_DIR"index-compiled.js" $DEST_DIR"index-final.js"
+		cat $ORIG_DIR"index.js" >> $DEST_DIR"index-final.js"
+		cat $ORIG_DIR"app/config/var.js" >> $DEST_DIR"index-final.js"
+		cat $DEST_DIR"index-temp.js" >> $DEST_DIR"index-final.js"
+		rm $DEST_DIR"index-compiled.js" $DEST_DIR"index-temp.js"
+		mv $DEST_DIR"index-final.js" $DEST_DIR"index.js"
+fi
+
+if [ -f $DEST_DIR"index-compiled.css" ]; then
+    rm -fr $DEST_DIR"css/global.css"
+    mv $DEST_DIR"index-compiled.css" $DEST_DIR"css/global.css"
+fi

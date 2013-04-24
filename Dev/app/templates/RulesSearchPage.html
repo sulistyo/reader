@@ -1,0 +1,44 @@
+<%= header1({url:'javascript:history.back(1)'}) %>
+<div class="iscroll">
+    <div class="scroller">
+        <div class="ui-title">
+            <form class="search-form">
+                <input type="text" id="keyword" name="keyword" class="text" placeholder="Search" />
+                <input type="submit" value="Search" class="button" />
+            </form>
+        </div>
+        <div class="ui-body" >
+            <div class="ui-content">
+                <% if (models.length) { %>
+                <div style="float:left;">Results for: <%= keyword %></div>
+                <div style="float:right;"><a href="#RulesSearchPage" id="reset-search">Reset Search</a></div>
+                <br />
+                <ul class="ui-accordion">
+                    <% for(var i in models) { %>
+                    <li>
+                        <a href="#RulesDetailPage/<%= models[i].get("Link") %>" class="ui-btn">
+                            <div class="ellipsis"><b><%= models[i].get("Name") %></b><br />
+                            <%= models[i].get("Description") %></div>
+                            <span class="ui-icon ui-icon-arrow">&nbsp;</span>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+                <% } else { %>
+                          <p>
+                        This section section contains administrative rules promulgated by the Ohio Department of Developmental Disabilities (DODD).
+                      </p>
+                          <p>
+                    Use the form above to search for a rule.  If you would like to see ALL current rules, click the button below.
+                          </p>
+                  <p align="right">
+                        <form class="search-form">
+                        <input type="submit" value="Show All Rules" class="button-all" />
+                        </form>
+                  </p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <%= footer() %> -->

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<title>The Points Guyr</title>
+
+<!-- CSS ================================================== -->
+<link rel="stylesheet" href="css/global.css" data-compile-me="1">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,600,700' rel='stylesheet' type='text/css'>
+<body>
+
+
+
+<script type="text/template" id="template-footer">
+
+<!-- HEIGHT BOTTOM -->
+<div id="row3">
+    <div class="container-footer">
+    </div>
+</div> 
+<!-- END HEIGHT BOTTOM -->
+</div>
+</div>
+
+<!-- FOOTER -->
+<!--
+<footer>
+<div id="row5">
+    <div class="container">
+            <div class="bg-footer">
+                <div class="footer-col">
+                    <div class="footer-col1 center">
+                        <a href="#" class="bottom-nav-left"></a>
+                    </div>
+                    <div class="footer-col1 center">
+                        <a href="#" class="bottom-bintang"></a>
+                    </div>
+                    <div class="footer-col1 center">
+                        <a href="#" class="bottom-circle"></a>
+                    </div>
+                    <div class="footer-col1 center">
+                        <a href="#" class="bottom-move"></a>
+                    </div>
+                    <div class="footer-col1 center">
+                        <a href="#" class="bottom-nav-right"></a>
+                    </div>
+               </div>
+           </div>
+    </div>
+</div>
+</footer>
+-->
+<!-- END FOOTER -->
+
+
+</script>
+
+
+<script type="text/template" id="template-header">
+
+<!-- HEADER -->
+<header>
+<div id="row1">
+    <div class="container"> 
+          <div class="main columns">
+            <div class="header"> 
+                <div class="one columns"> 
+									<p></p>
+                </div>
+                <div class="two columns">
+                    <span class="title-head">The Points Guy</span>
+                </div>
+                <div class="three columns">  
+<!--
+                	<div class="icon1 columns"><a href="#" class="icon-search-1"></a></div>
+                	<div class="icon2 columns"><a href="#" class="icon-search-2"></a></div> 
+-->
+                </div> 
+            </div>
+         </div>
+    </div>
+</div>
+</header>
+<!-- END HEADER -->
+
+
+</script>
+
+
+<script type="text/template" id="template-header1">
+
+<!-- HEADER -->
+<header>
+<div id="row1">
+    <div class="container"> 
+          <div class="main columns">
+            <div class="header"> 
+                <div class="one columns"> 
+						        <a href="<%=url%>" class="ui-btn-back goback">
+						            <span class="ui-icon-arrow-l goback">&nbsp;</span>
+						            <span class="ui-btn-text goback">Back</span>
+						        </a>
+                </div>
+                <div class="two columns">
+                    <span class="title-head">The Points Guy</span>
+                </div>
+                <div class="three columns">  
+<!--
+                	<div class="icon1 columns"><a href="#" class="icon-search-1"></a></div>
+                	<div class="icon2 columns"><a href="#" class="icon-search-2"></a></div> 
+-->
+                </div> 
+            </div>
+         </div>
+    </div>
+</div>
+</header>
+<!-- END HEADER -->
+
+
+</script>
+
+
+<script type="text/template" id="template-title">
+
+<div class="ui-title">
+    <h4><%=title%></h4>
+</div>
+
+</script>
+
+
+<script type="text/template" id="template-NewsPage">
+
+<%= header() %>
+<div id="wrapper">
+<div id="scroll-content">
+
+
+<% for(var i in models) { %>
+
+<!-- MAIN CONTENT -->
+<div id="row3">
+    <a href="#NewsDetailPage" data-title="<%= models[i].get('title') %>">
+    <div class="container <% if (i%2 === 0) { %> section <% } %>"> 
+    	<div class="main columns">
+        	<div class="line columns">
+              <div class="col2"><h4 class="time"><%= reader.datediff(models[i].get('publishedDate'),now) %></h4></div>
+            </div>
+            <div class="line columns">
+                <div class="col2-2">
+                	<span class="title">
+												<%= models[i].get('title') %>
+                    </span>
+                    <p class="text">
+										<%= models[i].get('contentSnippet') %>
+                    </p>
+                </div>
+       		</div>
+        </div>
+    </div>
+    </a>
+    <div class="content hide">
+		    <%= models[i].get('content') %>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<% } %>
+
+
+
+</script>
+
+
+<script type="text/template" id="template-NewsDetailPage">
+
+<%= header1({url:'javascript:history.back(1)'}) %>
+
+<div id="wrapper">
+<div id="scroll-content">
+<!-- MAIN CONTENT -->
+<div id="row3">
+    <div class="container"> 
+    	<div class="main columns">
+        	<div class="detail columns omega alpha">
+                <div class="title-box">
+                	<span class="title"><%= subject %></span>
+                </div>
+                <div class="title-box-1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+
+<!-- CONTENT -->
+<!-- MAIN CONTENT SECTION -->
+<div id="row3"> 
+	<!-- Row Content -->
+	<div class="container"> 
+		<div class="main columns"> 
+                <div class="line columns">
+                <%= content %>
+                </div>
+		</div>
+	</div> 
+</div>
+<!-- END CONTENT -->
+<!-- END MAIN CONTENT SECTION -->
+
+
+
+</script>
+
+
+
+<script type="text/javascript" src="cordova-2.6.0.js"></script>
+
+<script type="text/javascript" src="index.js" data-compile-me="1"></script>
+
+<script type="text/javascript">
+$(function() {
+reader.initialize();
+});
+</script>
+</body>
+</html>
+
+
+

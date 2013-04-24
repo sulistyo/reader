@@ -1,0 +1,35 @@
+<%= header() %>
+<div id="wrapper">
+<div id="scroll-content">
+
+
+<% for(var i in models) { %>
+
+<!-- MAIN CONTENT -->
+<div id="row3">
+    <a href="#NewsDetailPage" data-title="<%= models[i].get('title') %>">
+    <div class="container <% if (i%2 === 0) { %> section <% } %>"> 
+    	<div class="main columns">
+        	<div class="line columns">
+              <div class="col2"><h4 class="time"><%= reader.datediff(models[i].get('publishedDate'),now) %></h4></div>
+            </div>
+            <div class="line columns">
+                <div class="col2-2">
+                	<span class="title">
+												<%= models[i].get('title') %>
+                    </span>
+                    <p class="text">
+										<%= models[i].get('contentSnippet') %>
+                    </p>
+                </div>
+       		</div>
+        </div>
+    </div>
+    </a>
+    <div class="content hide">
+		    <%= models[i].get('content') %>
+    </div>
+</div>
+<!-- END MAIN CONTENT -->
+<% } %>
+

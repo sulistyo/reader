@@ -1,0 +1,533 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+body{
+	margin: 0;
+	padding: 0; 
+	font-family:"Open Sans", Arial;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+
+p {
+	font-size: 12px;
+    line-height: 20px;
+	margin-bottom: 18px; 
+}
+ul,
+ol { 
+	margin-bottom: 18px;
+}
+ul {
+	list-style-type:none; 
+}
+h1 {  
+    font-size: 26px; 
+    line-height: 32px;
+    margin-bottom: 18px;
+	font-weight:normal;
+  }
+h2 { 
+	font-size: 16px;  
+	line-height:22px;  
+	color:#FFFFFF;
+}
+ 
+h3 {  
+	font-size: 18px;  
+	line-height:22px;
+	font-weight:normal;
+	word-spacing:0px; 
+}
+
+h4{  
+	font-size:12px;
+	line-height:0px;  
+	font-weight:normal; 
+	color:#999;
+}
+
+a{ 	text-decoration:none; } 
+
+.header{ 
+	margin:0 auto;
+	background-color:#FF0066;
+	margin-top:10px;
+}
+.icon-nav{
+	background: url('../images/icon-nav.png');
+	width:27px;
+	height:26px; 
+}
+a.icon-search-1:link, a.icon-search-1:visited {
+	display:block; 
+	width:27px; 
+	height:30px;  
+	background:url('../images/icon-search.png') 0 0 no-repeat; 
+}
+a.icon-search-2:link, a.icon-search-2:visited {
+	display:block; 
+	width:22px; 
+	height:30px;  
+	background:url('../images/icon-search.png') -48px 0 no-repeat; 
+	
+}
+.datetime{
+	margin-top:15px;
+}
+
+/* CONTENT */
+.col0{
+	width:15%;
+	float:left;
+}
+.col1{
+	width:55%;
+	float:left;
+}
+.col2{
+	width:26%;
+	float:right;
+	text-align:right
+}
+.col1-1{
+	width:10%;
+	float:left; 
+}
+.col2-2{
+	text-align:left; 
+}
+a img.img{
+	width:97%;
+	height:auto;
+	padding:2px 2px 2px 2px;
+	background-color:#FFFFFF;
+	border:1px solid #d5d6d6;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	behavior: url(border-radius.htc);
+}
+ 
+
+/* FONT TEXT */ 
+.title-head{	
+	font-size: 16px;  
+	line-height:28px;  
+	color:#FFFFFF;
+	font-weight:bold; 
+}
+.title{
+	font-size:14px;
+	color:#555555;
+	font-weight:bold;
+}
+.title a{ 
+	color:#555555; 
+}
+p.text{
+	color:#9b9b9b;
+}
+h4.time{
+	color:#555555;
+}
+
+/*====== DETAIL.HTML ===========*/
+.title-box-1 span.black{
+	color:#000000;
+}
+.title-box{
+	text-align:left;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 15px;
+}
+.title-box-1{
+	max-width:120px;
+	text-align:center;
+	margin:0 auto;
+	color:#555555
+}
+p span.blue{
+	color:#0072bc
+}
+
+/* FOOTER */
+.container-footer { height:10px }
+.bg-footer{
+	width:100%;
+	margin:0 auto; 
+	z-index:9999;
+	position:fixed;
+	bottom:0;
+	width:100%;   
+	background: url('../images/bg-bottom.png'); 
+}
+.footer-col{ 
+	max-width:100%;
+	margin: 0 auto;
+	margin-top:8px; 
+	
+}
+.footer-col1{
+	width:50%;
+	float:left; 
+	
+}
+.footer-col1.center{
+	width:20%; 
+}
+.footer-col1.center a{
+	width:20%;
+	margin:0 auto;
+}
+a.bottom-nav-left:link, a.bottom-nav-left:visited {
+	display:block; 
+	width:29px; 
+	height:44px;  
+	background:url('../images/icon-bottom.png') 0 0 no-repeat;
+}
+a.bottom-bintang:link, a.bottom-bintang:visited {
+	display:block; 
+	width:30px; 
+	height:44px;  
+	background:url('../images/icon-bottom.png') -80px 0 no-repeat; 
+}
+a.bottom-circle:link, a.bottom-circle:visited {
+	display:block; 
+	width:41px; 
+	height:44px;  
+	background:url('../images/icon-bottom.png') -186px 0 no-repeat; 
+}
+a.bottom-move:link, a.bottom-move:visited {
+	display:block; 
+	width:41px; 
+	height:44px;  
+	background:url('../images/icon-bottom.png') -292px 0 no-repeat; 
+}
+a.bottom-nav-right:link, a.bottom-nav-right:visited {
+	display:block; 
+	width:29px; 
+	height:44px;  
+	background:url('../images/icon-bottom.png') -382px 0 no-repeat; 
+}
+
+/* iScrool*/
+header{ 
+   position:absolute; 
+   z-index:2;
+   top:0; left:0;
+   width:100%;
+   height:45px;
+   padding:0;
+ }
+
+ footer { 
+    position:absolute; 
+    z-index:2;
+    bottom:0; left:0;
+    width:100%;
+    height:48px;
+    padding:0; 
+ }
+
+ header, footer{
+    font-size:20px;
+    text-align:center; 
+  	font-weight:bold;  
+ }
+
+ #wrapper {
+    position:absolute; 
+    z-index:1;
+    top:45px; 
+		/*bottom:48px; */
+		bottom: 0px;
+		left:0;
+    width:100%; 
+    overflow:auto;
+ }
+ #scroll-content {
+   position:absolute; 
+   z-index:1;
+   width:100%;
+   padding:0;
+ }
+
+
+/* FLUID */ 
+ .container                                  { position: relative; width: 100%; margin: 0 auto; padding: 0; }
+    .container .column,
+    .container .columns                         { float: left; display: inline; margin-left: 3%; margin-right: 3%;}
+    .row                                        { margin-bottom: 20px; }
+	.column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+.container .main.columns                  { width: 100%; margin:0 auto; }
+
+
+.container .one.column,
+        .container .one.columns { width: 21%; float:left;}
+        .container .two.columns { width: 40%; text-align:center; }
+        .container .three.columns { width: 60px; float:right;}
+        .container .icon1.columns { width: 27px; float:left}
+		.container .icon2.columns { width: 22px; float:right}
+		
+.container .line.columns { width: 96%;}
+.container .line.columns p { font-size: 12px; line-height: 20px; margin-bottom: 18px; color: #9b9b9b; margin-right: 10px;}
+.container .detail.columns { width: 100%; background-color:#f2f0f0; padding:10px 0px 20px 0px; text-align:center; border-bottom:1px solid #dddbdb;}
+.container.section { background-color:#f6f1de; width:100%; height:auto; float:left; border-bottom:2px solid #dddddd; border-top:2px solid #dddddd;} 
+
+/* #Page Styles
+================================================== */
+
+ @media only screen and (min-width: 220px) and (max-width: 300px) {
+ 	
+.container .one.column,
+        .container .one.columns { width: 16%; float:left;}
+        .container .two.columns { width: 39%; text-align:center; }
+        .container .three.columns { width: 60px; float:right;}
+        .container .icon1.columns { width: 27px; float:left}
+		.container .icon2.columns { width: 22px; float:right}
+		
+		.title-head{	
+			font-size: 14px;  
+			line-height:18px;  
+			color:#FFFFFF;
+			font-weight:bold; 
+		}
+ }
+  
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/
+
+#row1{
+  height:50px;
+  margin:0 auto;
+  background-color: #3d3d3d;
+  clear:both;
+}
+#row2{
+  height:43px;
+  margin:0 auto;
+  background-color: #2b77ba;
+  clear:both;
+}
+#row3{
+  height:auto;
+  margin:0 auto;
+  background-color:#fafafa;
+  clear:both;
+}
+#row4{
+  height:43px;
+  margin:0 auto;
+  background-color:#006666;
+  clear:both;
+}
+#row5{
+  height:25px;
+  margin:0 auto;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
+.hide{
+	display:none;
+}
+.page {
+    position: absolute;
+    padding-top: 46px;
+    padding-bottom: 46px;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-family: Helvetica,Arial,sans-serif;
+    -webkit-background-origin: padding-box;
+    display: none;
+}
+
+.stage-center {
+    /*-webkit-transform: translate3d(0,0,0);*/
+    display: block;
+}
+
+.stage-left {
+    -webkit-transform: translate3d(-100%,0,0);
+    display: block;
+}
+
+.stage-right {
+    -webkit-transform: translate3d(100%,0,0);
+    display: block;
+}
+
+.transition {
+    -webkit-transition-duration: 300ms;
+    -webkit-transition-delay: 0ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+.ui-btn-back.tap {
+    border: 1px solid #225377;
+    background: #4E89C5;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 1px #194B7E;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #295B8E ),to( #3E79B5 ));
+    background-image: -webkit-linear-gradient( #295B8E,#3E79B5 );
+    background-image: linear-gradient( #295B8E,#3E79B5 );
+}
+
+.ui-btn {
+    border: 1px solid #CCC;
+    background: #EEE;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( white ),to( #F1F1F1 ));
+    background-image: -webkit-linear-gradient( white,#F1F1F1 );
+    background-image: linear-gradient( white,#F1F1F1 );
+    margin: 0;
+    font-family: Helvetica,Arial,sans-serif;
+    text-decoration: none;
+ 
+    color: #369;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 0 1px 0 #DFDFDF;
+    vertical-align:middle;
+    border-bottom: 0;
+    /*padding:5px;*/
+    /*cursor: pointer;*/
+}
+
+
+.ui-btn.tap {
+    border: 1px solid #BBB;
+    background: #D6D6D6;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 0 1px 0 white;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #D0D0D0 ),to( #DFDFDF ));
+    background-image: -webkit-linear-gradient( #D0D0D0,#DFDFDF );
+    background-image: linear-gradient( #D0D0D0,#DFDFDF );
+}
+
+
+.ui-btn-back {
+    -webkit-border-radius: 1.3em;
+    border-radius: 1.3em;
+    font-size: 12.5px;
+    padding: .55em 11px .5em;
+    padding-left: 2.2em;
+    white-space: nowrap;
+    zoom: 1;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-top: 1px solid white;
+    border-color: rgba(255, 255, 255, .3);
+    position: relative;
+    margin-top: 0px;
+    display: block;
+
+    border: 1px solid #044062;
+    background: #396B9E;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 1px #194B7E;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #5F9CC5 ),to( #396B9E ));
+    background-image: -webkit-linear-gradient( #5F9CC5,#396B9E );
+    background-image: linear-gradient( #5F9CC5,#396B9E );
+    text-decoration: none;
+}
+
+    
+.ui-icon-arrow-l {
+    background: #666;
+    background: rgba(0, 0, 0, .4);
+    background-image: url(../images/icons-18-white.png);
+    background-repeat: no-repeat;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    background-position: -144px 50%;
+    width: 18px;
+    height: 18px;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+    
+.ui-loader {
+    display: block;
+    border: 1px solid #999;
+    background: #F3F3F3;
+    color: #222;
+    text-shadow: 0 1px 0 white;
+    font-weight: normal;
+    background-image: -webkit-gradient(linear,left top,left bottom,from( #DDD ),to( #CCC ));
+    background-image: -webkit-linear-gradient( #DDD,#CCC );
+    background-image: -moz-linear-gradient( #DDD,#CCC );
+    background-image: -ms-linear-gradient( #DDD,#CCC );
+    background-image: -o-linear-gradient( #DDD,#CCC );
+    background-image: linear-gradient( #DDD,#CCC );
+    z-index: 9999999; position: fixed; top: 50%; left: 50%; border:0;
+    width: 200px; filter: Alpha(Opacity=88); opacity: .88; box-shadow: 0 1px 1px -1px #fff; height: auto; margin-left: -110px; margin-top: -43px; padding: 10px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -moz-border-radius: .6em;
+    -webkit-border-radius: .6em;
+    border-radius: .6em;
+}
+.ui-icon-loading {
+    background-color: #000; display: block; margin: 0; width: 44px; height: 44px; padding: 1px;
+    margin: 0 auto 10px;
+    background: url(../images/ajax-loader.gif);
+    background-size: 46px 46px;
+}
+.ui-icon-alert {
+    background-color: #000; display: block; margin: 0; width: 44px; height: 44px; padding: 1px;
+    margin: 0 auto 10px;
+    background: url(../images/ajax-alert.png);
+    background-size: 46px 46px;
+}
+.ui-loader h1 {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 16px; margin: 0; text-align: center;
+    height: auto;
+    overflow: visible;
+}
+/*.ui-loader-textonly { padding: 15px; margin-left: -115px; }
+.ui-loader-textonly .ui-icon { display: none; }
+.ui-loader-fakefix { position: absolute; }*/
